@@ -7,22 +7,19 @@ function App() {
 
 const handleInput = (value) => {
   setInput((prev) => {
-    // Проверяем, является ли последний символ оператором
     if (["+", "-", "*", "/"].includes(prev.slice(-1)) && ["+", "-", "*", "/"].includes(value)) {
-      return prev; // Игнорируем повторный оператор
+      return prev; 
     }
     return prev + value;
   });
 };
 
 
-  //Очистка экрана
   const clearInput = () => {
     setInput("");
     setResult(null);
   };
 
-  //Вычисление результата
   const calculateResult = () => {
     try {
       setResult(Function(`return ${input}`)());
@@ -58,7 +55,6 @@ const handleInput = (value) => {
   );
 }
 
-//Стили
 const styles = {
   container: { 
     textAlign: "center", 
@@ -66,10 +62,10 @@ const styles = {
     margin: "20px auto", 
     padding: "10px", 
     border: "2px solid #333", 
-    backgroundColor: "#008000" //Зеленый фон калькулятора
+    backgroundColor: "#008000" 
   },
   display: { 
-    background: "#333", //Черный фон для экрана
+    background: "#333", 
     color: "white", 
     padding: "10px", 
     minHeight: "40px", 
@@ -83,7 +79,7 @@ const styles = {
     marginTop: "10px" 
   },
   button: { 
-    backgroundColor: "#333", //Черный фон для кнопок
+    backgroundColor: "#333", 
     color: "white", 
     fontSize: "20px", 
     border: "1px solid #444", 
